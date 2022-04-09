@@ -1,0 +1,61 @@
+<mvc:View
+    controllerName="sap.ui.demo.walkthrough.controller.InvoiceList"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc">
+    <Table
+        id="invoiceList"
+        class="sapUiResponsiveMargin"
+        width="auto"
+		growing="true"
+		growingThreshold="200"
+        items="{
+            path : 'invoice>/',
+            sorter : {
+                path : 'userId',
+				group : true
+            }
+        }" >
+        <headerToolbar>
+            <Toolbar>
+                <Title textAlign="Center" width="50%" text="{i18n>invoiceListTitle}"/>
+                <SearchField TextAlign="End" width="60%" search=".onFilterInvoices"/>
+            </Toolbar>
+        </headerToolbar>
+        <columns>
+			<Column
+				hAlign="End"
+				minScreenWidth="Small"
+				demandPopin="true"
+				width="5em"> <!-- ALTERAÇÃO NECESSÁRIA PARA QUE CAIBA A ESCRITA "Quantity" -->
+				<Text text="{i18n>columnId}"/>
+			</Column>
+			<Column
+				hAlign="Center">
+				<Text text="{i18n>columnTitle}"/>
+			</Column>
+			<Column
+				hAlign="Center"
+				minScreenWidth="Small"
+				demandPopin="true">
+				<Text text="{i18n>columnCompleted}"/>
+			</Column>
+			<Column
+				hAlign="Center">
+				<Text text="Detalhes"/>
+			</Column>
+		</columns>
+        <items>
+            <ColumnListItem
+				type="Navigation"
+				press=".onPress">
+				<cells>
+					<ObjectNumber number="{invoice>id}" emphasized="false"/>
+					<ObjectIdentifier title="{invoice>title}"/>
+					<CheckBox
+						displayOnly="true"
+						selected="{invoice>completed}"/>
+				</cells>
+			</ColumnListItem>
+        </items>
+    </Table>
+</mvc:View>

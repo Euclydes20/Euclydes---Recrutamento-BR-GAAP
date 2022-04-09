@@ -6,6 +6,7 @@
         id="invoiceList"
         class="sapUiResponsiveMargin"
         width="auto"
+		alternateRowColors="true"
 		growing="true"
 		growingThreshold="200"
         items="{

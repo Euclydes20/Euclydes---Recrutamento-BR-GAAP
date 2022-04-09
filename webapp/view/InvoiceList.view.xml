@@ -18,29 +18,36 @@
         <headerToolbar>
             <Toolbar>
                 <Title textAlign="Center" width="50%" text="{i18n>invoiceListTitle}"/>
-                <SearchField TextAlign="End" width="60%" search=".onFilterInvoices"/>
+                <SearchField width="50%" search=".onFilterInvoices"/>
             </Toolbar>
         </headerToolbar>
         <columns>
 			<Column
-				hAlign="End"
+				hAlign="Center"
 				minScreenWidth="Small"
 				demandPopin="true"
-				width="5em"> <!-- ALTERAÇÃO NECESSÁRIA PARA QUE CAIBA A ESCRITA "Quantity" -->
+				width="20%">
 				<Text text="{i18n>columnId}"/>
 			</Column>
 			<Column
-				hAlign="Center">
+				hAlign="Center"
+				minScreenWidth="Small"
+				demandPopin="true"
+				width="40%">
 				<Text text="{i18n>columnTitle}"/>
 			</Column>
 			<Column
 				hAlign="Center"
 				minScreenWidth="Small"
-				demandPopin="true">
+				demandPopin="true"
+				width="20%">
 				<Text text="{i18n>columnCompleted}"/>
 			</Column>
 			<Column
-				hAlign="Center">
+				hAlign="Center"
+				minScreenWidth="Small"
+				demandPopin="true"
+				width="20%">
 				<Text text="Detalhes"/>
 			</Column>
 		</columns>
